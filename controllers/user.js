@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const User = require('../models/user');
 
 exports.userGetAllUsers = async (req, res) => {
+    console.log("A get all users request is received");
     await User
             .find()
             .exec()
@@ -19,6 +20,7 @@ exports.userGetAllUsers = async (req, res) => {
 };
 
 exports.userCreateUser = async (req, res) => {
+    console.log("A new user request is received");
     const user = await new User({
         _id: new mongoose.Types.ObjectId(),
         name: req.body.name,

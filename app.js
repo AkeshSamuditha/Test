@@ -13,10 +13,11 @@ app.use('/user', userRoutes);
 
 //error handling for bad requests
 app.use((req, res) => {
-    const err = new Error('Not found');
-    error.status = 404;
+    console.log("Bad request");
+    const error = new Error("Bad request");
+    res.status = 404;
     res.json({
-        error: err
+        error: error
     });
 });
 
